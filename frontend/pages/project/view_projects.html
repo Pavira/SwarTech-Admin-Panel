@@ -1,0 +1,28 @@
+<!-- projects/view_projects.html -->
+
+<!-- Header -->
+<div id="page-header-data"
+     data-title="Admin Panel"
+     data-icon="bar-chart-fill"
+     data-subtitle="Manage all project records">
+</div>
+
+<!-- Add Project Button -->
+<div class="d-flex justify-content-end align-items-center gap-2 mb-3 flex-wrap">
+  <button class="btn btn-primary nav-link-load" data-page="project/add_projects">
+    <i class="bi bi-plus-circle me-1"></i> Add Project
+  </button>
+</div>
+
+<!-- Project Count -->
+<div class="mb-3">
+  <i class="bi bi-kanban-fill me-1"></i>
+  <span class="fw-bold">Total Project Count: </span>
+  <span id="project-count"></span>
+</div>
+
+<!-- Container for Dynamic Project Cards -->
+<div class="row g-4" id="projects-container">
+  <!-- Project cards will be inserted here dynamically via JS -->
+</div>
+

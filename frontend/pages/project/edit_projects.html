@@ -1,0 +1,225 @@
+<!-- edit_projects.html -->
+<div id="page-header-data"
+     data-title="Edit Project"
+     data-icon="pencil-square"
+     data-subtitle="Modify or remove project details">
+</div>
+
+<!-- Back Button -->
+<div class="d-flex justify-content-end align-items-center gap-2 mb-3 flex-wrap">
+  <button class="btn btn-danger" id="backButton" onclick="loadPage('project/view_projects')">
+    <i class="bi bi-arrow-left-circle me-1"></i> Back
+  </button>
+</div>
+
+<form id="edit-project-form">
+
+  <!-- Project ID -->
+  <div class="text-center mb-4">
+    <label for="projectId" class="form-label fw-bold">Project ID</label>
+    <input type="text" class="form-control text-center fw-bold" id="projectId" 
+           readonly style="max-width:300px; margin:0 auto; background-color:#e9ecef;">
+  </div>
+
+  <!-- 1. Basic Project Info -->
+  <div class="card mb-4 shadow-sm border-0">
+    <div class="card-body"> 
+      <h5 class="card-title mb-3">Basic Project Info</h5>
+      <div class="row gy-3">
+        <!-- Project Name -->
+        <div class="col-md-6">
+          <label for="projectName" class="form-label">Project Name / Title*</label>
+          <input type="text" class="form-control" id="projectName" required>
+        </div>
+        <!-- Project Description -->
+        <div class="col-md-6">
+          <label for="projectDescription" class="form-label">Project Description</label>
+          <textarea class="form-control" id="projectDescription" rows="2"></textarea>
+        </div>
+        <!-- Client Name -->
+        <div class="col-md-4">
+          <label for="clientName" class="form-label">Client Name</label>
+          <input type="text" class="form-control" id="clientName">
+        </div>
+        <!-- Client Industry -->
+        <div class="col-md-4">
+          <label for="clientIndustry" class="form-label">Client Industry / Domain</label>
+          <select class="form-select" id="clientIndustry">
+            <option value="">Select Industry</option>
+            <option value="Healthcare">Healthcare</option>
+            <option value="Education">Education</option>
+            <option value="Finance">Finance</option>
+            <option value="IT">IT</option>
+            <option value="Manufacturing">Manufacturing</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+        <!-- Client Contact Person -->
+        <div class="col-md-4">
+          <label class="form-label">Client Contact Person</label>
+          <input type="text" class="form-control mb-1" id="clientContactName" placeholder="Name">
+          <input type="email" class="form-control mb-1" id="clientContactEmail" placeholder="Email">
+          <input type="tel" class="form-control" id="clientContactPhone" placeholder="Phone">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. Project Classification -->
+  <div class="card mb-4 shadow-sm border-0">
+    <div class="card-body">
+      <h5 class="card-title mb-3">Project Classification</h5>
+      <div class="row gy-3">
+        <div class="col-md-4">
+          <label for="projectType" class="form-label">Project Type*</label>
+          <select class="form-select" id="projectType" required>
+            <option value="">Select Type</option>
+            <option value="Web App">Web App</option>
+            <option value="Mobile App">Mobile App</option>
+            <option value="API">API</option>
+            <option value="Audit">Audit</option>
+            <option value="Internal Tool">Internal Tool</option>
+          </select>
+        </div>
+        <div class="col-md-4">
+          <label for="projectCategory" class="form-label">Project Category</label>
+          <select class="form-select" id="projectCategory">
+            <option value="">Select Category</option>
+            <option value="New Development">New Development</option>
+            <option value="Maintenance">Maintenance</option>
+            <option value="Upgrade">Upgrade</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. Project Execution Details -->
+  <div class="card mb-4 shadow-sm border-0">
+    <div class="card-body">
+      <h5 class="card-title mb-3">Project Execution Details</h5>
+      <div class="row gy-3">
+        <div class="col-md-6">
+          <label for="projectManager" class="form-label">Project Manager / Owner</label>
+          <input type="text" class="form-control" id="projectManager">
+        </div>
+        <div class="col-md-6">
+          <label for="assignedTeam" class="form-label">Assigned Team Members</label>
+          <input type="text" class="form-control" id="assignedTeam">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. Technical Stack -->
+  <div class="card mb-4 shadow-sm border-0">
+    <div class="card-body">
+      <h5 class="card-title mb-3">Technical Stack</h5>
+      <div class="row gy-3">
+        <div class="col-md-3">
+          <label for="frontEndTech" class="form-label">Frontend Tech</label>
+          <input type="text" class="form-control" id="frontEndTech">
+        </div>
+        <div class="col-md-3">
+          <label for="backEndTech" class="form-label">Backend Tech</label>
+          <input type="text" class="form-control" id="backEndTech">
+        </div>
+        <div class="col-md-3">
+          <label for="database" class="form-label">Database</label>
+          <input type="text" class="form-control" id="database">
+        </div>
+        <div class="col-md-3">
+          <label for="deploymentPlatform" class="form-label">Hosting / Deployment Platform</label>
+          <input type="text" class="form-control" id="deploymentPlatform">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5. Project Documentation -->
+  <div class="card mb-4 shadow-sm border-0">
+    <div class="card-body">
+      <h5 class="card-title mb-3">Project Documentation (Provide Links)</h5>
+      <div class="row gy-3">
+        <div class="col-md-6">
+          <label class="form-label">Functional Requirement Specification (FRS)</label>
+          <input type="url" class="form-control" id="frsLink">
+        </div>
+        <div class="col-md-6">
+          <label class="form-label">Change Request Document</label>
+          <input type="url" class="form-control" id="changeRequestLink">
+        </div>
+        <div class="col-md-6">
+          <label class="form-label">Design Document</label>
+          <input type="url" class="form-control" id="designDocLink">
+        </div>
+        <div class="col-md-6">
+          <label class="form-label">Test Cases / Test Plan</label>
+          <input type="url" class="form-control" id="testCasesLink">
+        </div>
+        <div class="col-md-6">
+          <label class="form-label">User Manual</label>
+          <input type="url" class="form-control" id="userManualLink">
+        </div>
+        <div class="col-md-6">
+          <label class="form-label">Source Code</label>
+          <input type="url" class="form-control" id="sourceCodeLink">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 6. Timeline -->
+  <div class="card mb-4 shadow-sm border-0">
+    <div class="card-body">
+      <h5 class="card-title mb-3">Timeline</h5>
+      <div class="row gy-3">
+        <div class="col-md-3">
+          <label for="startDate" class="form-label">Start Date</label>
+          <input type="date" class="form-control" id="startDate">
+        </div>
+        <div class="col-md-3">
+          <label for="expectedEndDate" class="form-label">Expected End Date</label>
+          <input type="date" class="form-control" id="expectedEndDate">
+        </div>
+        <div class="col-md-3">
+          <label for="expectedDuration" class="form-label">Expected Duration</label>
+          <input type="text" class="form-control" id="expectedDuration" readonly style="background-color:#e9ecef;">
+        </div>
+        <div class="col-md-3">
+          <label for="actualEndDate" class="form-label">Actual Delivery Date</label>
+          <input type="date" class="form-control" id="actualEndDate">
+        </div>
+        <div class="col-md-3">
+          <label for="actualDuration" class="form-label">Actual Duration</label>
+          <input type="text" class="form-control" id="actualDuration" readonly style="background-color:#e9ecef;">
+        </div>
+        <div class="col-md-3">
+          <label for="timeDiff" class="form-label">Time Difference</label>
+          <input type="text" class="form-control" id="timeDiff" readonly style="background-color:#e9ecef;">
+        </div>
+        <div class="col-md-3">
+          <label for="status" class="form-label">Current Status*</label>
+          <select class="form-select" id="status" required>
+            <option value="">Select Status</option>
+            <option value="Planned">Planned</option>
+            <option value="In Progress">In Progress</option>
+            <option value="On Hold">On Hold</option>
+            <option value="Delivered">Delivered</option>
+            <option value="Cancelled">Cancelled</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Action Buttons -->
+  <div class="d-flex justify-content-end gap-2 mb-4">
+    <button type="submit" class="btn btn-primary">
+      <i class="bi bi-save me-2"></i>Update Project
+    </button>
+    <button type="button" class="btn btn-danger" id="deleteProjectBtn">
+      <i class="bi bi-trash me-2"></i>Delete Project
+    </button>
+  </div>
+</form>
