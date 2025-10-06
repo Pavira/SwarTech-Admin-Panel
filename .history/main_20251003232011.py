@@ -65,11 +65,11 @@ def open_browser(url: str):
 
 
 # ---------- Run server ----------
-# if __name__ == "__main__":
-#     url = "http://127.0.0.1:8000/"
+if __name__ == "__main__":
+    url = "http://127.0.0.1:8000/"
 
-#     # Open browser in a separate thread
-#     open_browser(url)
+    # Open browser in a separate thread
+    open_browser(url)
 
-#     # Start FastAPI server (blocking)
-#     uvicorn.run(app, host="127.0.0.1", port=8000, log_level="info")
+    # Start FastAPI server (blocking)
+    uvicorn.run(app, host="127.0.0.1", port=8000, log_level="info")

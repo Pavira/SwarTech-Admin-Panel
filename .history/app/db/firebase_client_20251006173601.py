@@ -74,6 +74,7 @@ def initialize_firebase():
             print("✅ Firebase app initialized.")
 
         db = firestore.client()
+        # bucket = storage.bucket()
 
     except json.JSONDecodeError:
         print("❌ Error decoding FIREBASE_CONFIG JSON.")

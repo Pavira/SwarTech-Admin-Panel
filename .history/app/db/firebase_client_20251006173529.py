@@ -70,10 +70,13 @@ def initialize_firebase():
             cred_dict = json.loads(firebase_json)
             cred = credentials.Certificate(cred_dict)
 
-            firebase_app = firebase_admin.initialize_app(cred)
+            firebase_app = firebase_admin.initialize_app(
+                cred, {"storageBucket": f"{cred_dict['project_id']}.appspot.com"}
+            )
             print("✅ Firebase app initialized.")
 
         db = firestore.client()
+        bucket = storage.bucket()
 
     except json.JSONDecodeError:
         print("❌ Error decoding FIREBASE_CONFIG JSON.")
